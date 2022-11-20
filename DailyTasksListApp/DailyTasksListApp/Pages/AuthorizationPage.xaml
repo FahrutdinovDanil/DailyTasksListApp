@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DailyTasksListApp.Pages.AuthorizationPage"
+             NavigationPage.HasNavigationBar="False" Visual="Material">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Spacing="50" Padding="30">
+            <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+                <Label Text="ONLY CATS.COM"  FontSize="35"
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="here you can look after yourself a hot kitty" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+            <StackLayout Spacing="30" >
+                <StackLayout>
+                    <Label Text="Email" FontSize="Large"></Label>
+                    <Entry x:Name="loginEntry" Keyboard="Email"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Password" FontSize="Large"></Label>
+                    <Entry x:Name="passwordEntry" IsPassword ="True" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" >
+                <Button Text="Sign in" HorizontalOptions="FillAndExpand" Clicked="Authorization_Clicked"></Button>
+                <Button Text="Sign up" HorizontalOptions="FillAndExpand" Clicked="Register_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

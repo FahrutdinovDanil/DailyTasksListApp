@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DailyTasksListApp
+namespace DailyTasksListApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UsersPage : ContentPage
+    public partial class SendTaskPage : ContentPage
     {
-        public UsersPage()
+        public SendTaskPage()
         {
             InitializeComponent();
         }

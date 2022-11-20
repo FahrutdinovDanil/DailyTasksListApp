@@ -7,9 +7,9 @@
         <StackLayout VerticalOptions="Center" Spacing="50" Padding="30">
             <StackLayout VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand">
-                <Label Text="ONLY CATS.COM"  FontSize="35"
+                <Label Text="DAILY TASKS"  FontSize="35"
                 HorizontalOptions="CenterAndExpand" />
-                <Label Text="here you can look after yourself a hot kitty" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="JUST DO IT" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
             <StackLayout Spacing="30" >
                 <StackLayout>

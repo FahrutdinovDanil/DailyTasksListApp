@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DailyTasksListApp.Pages.TabPages.NotificationsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="messagesList" SeparatorColor="Black" ItemsSource="{Binding}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout  Orientation="Horizontal">
+                                <Label Text="Вам пользователь"/>
+                                <Label Text="{Binding NameUser}"/>
+                                <StackLayout  Orientation="Horizontal">
+                                    <Label Text="отправил запрос на дату"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

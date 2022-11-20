@@ -1,4 +1,5 @@
 ﻿using DailyTasksListApp.Pages;
+using DailyTasksListApp.Pages.TabPages;
 using DailyTasksListApp.SQLite;
 using DailyTasksListApp.ViewModels;
 using DailyTasksListApp.Views;
@@ -46,7 +47,7 @@ namespace DailyTasksListApp
 
         private void users_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new UsersPage(/*Iuser.Id*/));
+            Navigation.PushAsync(new UsersTabbedPage(Iuser.Id));
             Current.FlyoutIsPresented = false;
         }
         private void exit_Clicked(object sender, EventArgs e)

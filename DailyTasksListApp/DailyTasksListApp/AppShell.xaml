@@ -19,12 +19,12 @@
     <FlyoutItem Title="Main page" Icon="iconShell.png">
         <ShellContent ContentTemplate="{DataTemplate pages:InfoPage}"/>
     </FlyoutItem>
-    <MenuItem Text="Назначен мне" Clicked="appointed_Clicked" IconImageSource="message.png"/>
+    <MenuItem Text="Назначено мне" Clicked="appointed_Clicked" IconImageSource="message.png"/>
     <MenuItem Text="Важно" Clicked="important_Clicked" IconImageSource="MyCats.jpg" />
     <MenuItem Text="Запланировано" Clicked="planned_Clicked" IconImageSource="becomeCatsitter.jpg" />
-    <MenuItem Text="Задачи" Clicked="tasks_Clicked"  IconImageSource="Catsitter.jpg" />
+    <MenuItem Text="Все задачи" Clicked="tasks_Clicked"  IconImageSource="Catsitter.jpg" />
     <MenuItem Text="Продукты" Clicked="products_Clicked"  IconImageSource="Catsitter.jpg" />
     <MenuItem Text="Пользователи" Clicked="users_Clicked"  IconImageSource="Catsitter.jpg" />
-    <MenuItem Text="Exit" Clicked="exit_Clicked"  IconImageSource="exitIcon.png" />
+    <MenuItem Text="Выход" Clicked="exit_Clicked"  IconImageSource="exitIcon.png" />
 
 </Shell>

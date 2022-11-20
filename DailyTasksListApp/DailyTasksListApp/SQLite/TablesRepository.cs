@@ -13,8 +13,9 @@ namespace DailyTasksListApp.SQLite
             database = new SQLiteConnection(databasePath);
             database.CreateTable<User>();
             database.CreateTable<Task>();
+            database.CreateTable<Request>();
         }
-
+        #region User
         public IEnumerable<User> GetUsers()
         {
             return database.Table<User>().ToList();
@@ -22,6 +23,14 @@ namespace DailyTasksListApp.SQLite
         public User GetUser(int id)
         {
             return database.Get<User>(id);
+        }
+        public User GetUserId(int id)
+        {
+            return database.Table<User>().Where(a => a.Id == id).FirstOrDefault();
+        }
+        public IEnumerable<User> GetUsersId(int id)
+        {
+            return database.Table<User>().Where(a => a.Id != id);
         }
         public int DeleteUser(int id)
         {
@@ -39,7 +48,8 @@ namespace DailyTasksListApp.SQLite
                 return database.Insert(item);
             }
         }
-
+        #endregion
+        #region Task
         public IEnumerable<Task> GetTasks()
         {
             return database.Table<Task>().ToList();
@@ -68,5 +78,40 @@ namespace DailyTasksListApp.SQLite
                 return database.Insert(item);
             }
         }
+        #endregion
+        #region
+        public IEnumerable<Request> GetRequests()
+        {
+            return database.Table<Request>().ToList();
+        }
+        public Request GetRequest(int id)
+        {
+            return database.Get<Request>(id);
+        }
+        public Request GetRequestIdUser(int id)
+        {
+            return database.Table<Request>().Where(a => a.IdUser == id).FirstOrDefault();
+        }
+        public int DeleteRequest(int id)
+        {
+            return database.Delete<Request>(id);
+        }
+        public IEnumerable<Request> GetRequestUser(int id)
+        {
+            return database.Table<Request>().Where(a => a.IdUser == id);
+        }
+        public int SaveRequest(Request item)
+        {
+            if (item.IdRequest != 0)
+            {
+                database.Update(item);
+                return item.IdRequest;
+            }
+            else
+            {
+                return database.Insert(item);
+            }
+        }
+        #endregion
     }
 }

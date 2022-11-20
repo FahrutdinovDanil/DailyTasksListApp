@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DailyTasksListApp.Pages.EditTaskPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="RemoveTask">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="Font" Glyph="&#xe16c;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" >
+                <StackLayout >
+                    <StackLayout>
+                        <Label Text="Название"  TextColor="black"></Label>
+                        <Entry Text="{Binding Name}" x:Name="entName" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Описание"  TextColor="black"></Label>
+                        <Entry Text="{Binding Discription}" x:Name="entDiscription"/>
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                    <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Изменить" Clicked="SaveTask" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

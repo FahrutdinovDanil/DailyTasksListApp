@@ -13,17 +13,17 @@
             </StackLayout>
             <StackLayout Spacing="30" >
                 <StackLayout>
-                    <Label Text="Email" FontSize="Large"></Label>
+                    <Label Text="Логин" FontSize="Large"></Label>
                     <Entry x:Name="loginEntry" Keyboard="Email"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Password" FontSize="Large"></Label>
+                    <Label Text="Пароль" FontSize="Large"></Label>
                     <Entry x:Name="passwordEntry" IsPassword ="True" />
                 </StackLayout>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" >
-                <Button Text="Sign in" HorizontalOptions="FillAndExpand" Clicked="Authorization_Clicked"></Button>
-                <Button Text="Sign up" HorizontalOptions="FillAndExpand" Clicked="Register_Clicked"></Button>
+                <Button Text="Авторизоваться" HorizontalOptions="FillAndExpand" Clicked="Authorization_Clicked"></Button>
+                <Button Text="Зарегистрироваться" HorizontalOptions="FillAndExpand" Clicked="Register_Clicked"></Button>
             </StackLayout>
         </StackLayout>
 

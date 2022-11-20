@@ -39,5 +39,34 @@ namespace DailyTasksListApp.SQLite
                 return database.Insert(item);
             }
         }
+
+        public IEnumerable<Task> GetTasks()
+        {
+            return database.Table<Task>().ToList();
+        }
+        public IEnumerable<Task> GetTasksId(int id)
+        {
+            return database.Table<Task>().Where(a => a.IdUser == id);
+        }
+        public Task GetTask(int id)
+        {
+            return database.Get<Task>(id);
+        }
+        public int DeleteTask(int id)
+        {
+            return database.Delete<Task>(id);
+        }
+        public int SaveTask(Task item)
+        {
+            if (item.Id != 0)
+            {
+                database.Update(item);
+                return item.Id;
+            }
+            else
+            {
+                return database.Insert(item);
+            }
+        }
     }
 }

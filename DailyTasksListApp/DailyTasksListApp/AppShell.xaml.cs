@@ -1,4 +1,5 @@
-﻿using DailyTasksListApp.SQLite;
+﻿using DailyTasksListApp.Pages;
+using DailyTasksListApp.SQLite;
 using DailyTasksListApp.ViewModels;
 using DailyTasksListApp.Views;
 using System;
@@ -7,21 +8,50 @@ using Xamarin.Forms;
 
 namespace DailyTasksListApp
 {
-    public partial class AppShell : Xamarin.Forms.Shell
+    public partial class AppShell : Shell
     {
         public User Iuser { get; set; }
         public AppShell(User user)
         {
             InitializeComponent();
             Iuser = user;
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             this.BindingContext = this;
         }
 
-        private async void OnMenuItemClicked(object sender, EventArgs e)
+        private async void appointed_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//LoginPage");
+            await Navigation.PushAsync(new AppointedTasksPage(/*Iuser.Id*/));
+            Current.FlyoutIsPresented = false;
+        }
+        private async void important_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ImportantTasksPage(/*Iuser.Id*/));
+            Current.FlyoutIsPresented = false;
+        }
+        private void planned_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PlannedTasksPage(/*Iuser*/));
+            Current.FlyoutIsPresented = false;
+        }
+        private void tasks_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TasksPage(Iuser.Id));
+            Current.FlyoutIsPresented = false;
+        }
+        private void products_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ProductsPage(/*Iuser.Id*/));
+            Current.FlyoutIsPresented = false;
+        }
+
+        private void users_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UsersPage(/*Iuser.Id*/));
+            Current.FlyoutIsPresented = false;
+        }
+        private void exit_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new AuthorizationPage();
         }
     }
 }

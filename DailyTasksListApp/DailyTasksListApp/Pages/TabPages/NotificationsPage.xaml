@@ -4,7 +4,7 @@
              x:Class="DailyTasksListApp.Pages.TabPages.NotificationsPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="messagesList" SeparatorColor="Black" ItemsSource="{Binding}">
+            <ListView x:Name="messagesList" SeparatorColor="Black" ItemSelected="messagesList_ItemSelected" ItemsSource="{Binding}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

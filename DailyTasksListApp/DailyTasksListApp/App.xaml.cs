@@ -29,7 +29,7 @@ namespace DailyTasksListApp
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new Main());
+            MainPage = new NavigationPage(new AuthorizationPage());
         }
 
         protected override void OnStart()

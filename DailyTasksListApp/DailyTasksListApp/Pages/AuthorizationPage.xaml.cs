@@ -10,13 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace DailyTasksListApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Main : ContentPage
+    public partial class AuthorizationPage : ContentPage
     {
-        public Main()
+        public AuthorizationPage()
         {
             InitializeComponent();
         }
-
         private void Register_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new RegistrationPage());

@@ -26,8 +26,30 @@ namespace DailyTasksListApp.Pages.TabPages
         }
         protected override void OnAppearing()
         {
-            messagesList.ItemsSource = App.Database.GetRequests().Where(a => a.IdNewUser == idUser);
+            messagesList.ItemsSource = App.Database.GetRequests().Where(a => a.IdNewUser == idUser && a.IsReceived == false && a.IsNotReceived == false);
             base.OnAppearing();
+        }
+        private async void messagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Request selectedRequest = (Request)e.SelectedItem;
+            if (await DisplayAlert("Уведомление", $"Пользователь {selectedRequest.NameNewUser} хочет добавить вас в друзья. Он оставил вам сообщение: '{selectedRequest.Message}'. Вы хотите принять запрос от {selectedRequest.NameNewUser}?", "Принять", "Отклонить"))
+            {
+                if (!String.IsNullOrEmpty(selectedRequest.Message))
+                {
+                    selectedRequest.IsReceived = true;
+                    App.Database.SaveRequest(selectedRequest);
+                }
+                await this.Navigation.PopAsync();
+            }
+            else
+            {
+                if (!String.IsNullOrEmpty(selectedRequest.Message))
+                {
+                    selectedRequest.IsNotReceived = true;
+                    App.Database.SaveRequest(selectedRequest);
+                }
+                await this.Navigation.PopAsync();
+            }
         }
     }
 }

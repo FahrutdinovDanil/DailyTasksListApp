@@ -41,10 +41,9 @@ namespace DailyTasksListApp
         }
         private void products_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ProductsPage(/*Iuser.Id*/));
+            Navigation.PushAsync(new ProductsPage(Iuser.Id));
             Current.FlyoutIsPresented = false;
         }
-
         private void users_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new UsersTabbedPage(Iuser.Id));
@@ -52,7 +51,7 @@ namespace DailyTasksListApp
         }
         private void exit_Clicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Main();
+            Application.Current.MainPage = new AuthorizationPage();
         }
     }
 }

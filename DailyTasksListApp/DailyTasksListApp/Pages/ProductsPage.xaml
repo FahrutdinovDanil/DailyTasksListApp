@@ -2,11 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DailyTasksListApp.ProductsPage">
-    <ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddProduct">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="Font" Glyph="&#xe145;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="productsList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="productsList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout  Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical" Spacing="-5">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Name:"/>
+                                            <Label Text="{Binding Name}"/>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>

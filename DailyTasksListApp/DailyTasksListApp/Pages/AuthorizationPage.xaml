@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DailyTasksListApp.Pages.Main"
-             NavigationPage.HasNavigationBar="False" Visual="Material">
+             x:Class="DailyTasksListApp.Pages.AuthorizationPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" Spacing="50" Padding="30">
             <StackLayout VerticalOptions="CenterAndExpand" 

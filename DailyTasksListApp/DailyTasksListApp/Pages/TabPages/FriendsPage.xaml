@@ -4,9 +4,18 @@
              x:Class="DailyTasksListApp.Pages.TabPages.FriendsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="messagesList" SeparatorColor="Black" ItemSelected="messagesList_ItemSelected" ItemsSource="{Binding}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout  Orientation="Horizontal">
+                                <Label Text="Вам пользователь"/>
+                                <Label Text="{Binding NameUser}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

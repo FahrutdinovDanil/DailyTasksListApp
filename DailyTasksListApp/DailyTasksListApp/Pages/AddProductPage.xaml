@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DailyTasksListApp.Pages.AddProductPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" >
+                <StackLayout >
+                    <StackLayout>
+                        <Label Text="Название"  TextColor="black"></Label>
+                        <Entry x:Name="entName" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="Количество"  TextColor="black"></Label>
+                            <Entry x:Name="entCount" />
+                        </StackLayout>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="Единица измерения"></Label>
+                                    <Picker x:Name="pickerUnit" WidthRequest="30">
+                                        <Picker.Items>
+                                            <x:String>кг</x:String >
+                                            <x:String>г</x:String >
+                                            <x:String>л</x:String >
+                                            <x:String>шт</x:String >
+                                        </Picker.Items>
+                                    </Picker>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Примечание"  TextColor="black"></Label>
+                        <Editor x:Name="entDicription"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                    <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Добавить" Clicked="SaveProduct" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

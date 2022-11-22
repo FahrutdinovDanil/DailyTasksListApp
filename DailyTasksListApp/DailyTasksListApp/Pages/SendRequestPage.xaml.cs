@@ -32,27 +32,28 @@ namespace DailyTasksListApp.Pages
 
         private async void SendRequest(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    var checkReq = App.Database.GetRequests().Where(a => a.IdUser == idUser && a.IdNewUser == idNewUser);
-            //}
-            //catch
-            //{
+            List<Request> checkReq = App.Database.GetRequests().Where(a => a.IdUser == idUser && a.IdNewUser == idNewUser && a.IsReceived == true).ToList();
 
-            //}
-            
-            Request request = new Request()
+            if (checkReq.Count == 0)
             {
-                IdNewUser = idNewUser,
-                NameNewUser = App.Database.GetUser(idNewUser).Name,
-                NameUser = User.Name,
-                IdUser = idUser,
-                Message = "Хочу в друзья"
+                Request request = new Request()
+                {
+                    IdNewUser = idNewUser,
+                    NameNewUser = App.Database.GetUser(idNewUser).Name,
+                    NameUser = User.Name,
+                    IdUser = idUser,
+                    Message = "Хочу в друзья"
+                };
+                App.Database.SaveRequest(request);
+                await Navigation.PushAsync(new UsersTabbedPage(idUser));
+            }
+            else
+            {
+                await DisplayAlert(" ", $"У вас уже есть заявка", "Выйти");
+            }
+            
 
-            };
-
-            App.Database.SaveRequest(request);
-            await Navigation.PushAsync(new UsersTabbedPage(idUser));
+            
         }
     }
 }

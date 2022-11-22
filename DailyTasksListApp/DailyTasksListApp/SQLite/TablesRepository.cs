@@ -14,6 +14,7 @@ namespace DailyTasksListApp.SQLite
             database.CreateTable<User>();
             database.CreateTable<Task>();
             database.CreateTable<Request>();
+            database.CreateTable<Product>();
         }
         #region User
         public IEnumerable<User> GetUsers()
@@ -79,7 +80,7 @@ namespace DailyTasksListApp.SQLite
             }
         }
         #endregion
-        #region
+        #region Request
         public IEnumerable<Request> GetRequests()
         {
             return database.Table<Request>().ToList();
@@ -106,10 +107,40 @@ namespace DailyTasksListApp.SQLite
         }
         public int SaveRequest(Request item)
         {
-            if (item.IdRequest != 0)
+            if (item.Id != 0)
             {
                 database.Update(item);
-                return item.IdRequest;
+                return item.Id;
+            }
+            else
+            {
+                return database.Insert(item);
+            }
+        }
+        #endregion
+        #region Product
+        public IEnumerable<Product> GetProducts()
+        {
+            return database.Table<Product>().ToList();
+        }
+        public IEnumerable<Product> GetProductsId(int id)
+        {
+            return database.Table<Product>().Where(a => a.IdUser == id);
+        }
+        public Product GetProduct(int id)
+        {
+            return database.Get<Product>(id);
+        }
+        public int DeleteProduct(int id)
+        {
+            return database.Delete<Product>(id);
+        }
+        public int SaveProduct(Product item)
+        {
+            if (item.Id != 0)
+            {
+                database.Update(item);
+                return item.Id;
             }
             else
             {

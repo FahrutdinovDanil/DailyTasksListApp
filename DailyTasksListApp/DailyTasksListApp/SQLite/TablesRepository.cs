@@ -88,6 +88,10 @@ namespace DailyTasksListApp.SQLite
         {
             return database.Get<Request>(id);
         }
+        //public IEnumerable<Request> GetRequestsId(int id)
+        //{
+        //    return database.Table<Request>().Where(a => a.IdUser == id);
+        //}
         public Request GetRequestIdUser(int id)
         {
             return database.Table<Request>().Where(a => a.IdUser == id).FirstOrDefault();

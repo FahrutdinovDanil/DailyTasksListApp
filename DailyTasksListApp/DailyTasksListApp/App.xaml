@@ -8,11 +8,11 @@
             <Setter Property="BackgroundColor" Value="#B4A390"/>
             <Setter Property="TextColor" Value="Black"/>
         </Style>
-        <Style TargetType="Entry">
+        <!--<Style TargetType="Entry">
             <Setter Property="BackgroundColor" Value="#E5E5E5" />
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="HorizontalTextAlignment" Value="Start" />
-        </Style>
+        </Style>-->
         <Style TargetType="NavigationPage">
             <Setter Property="BackgroundColor" Value="#B4A390"/>
             <Setter Property="BarBackgroundColor" Value="#B4A390"/>

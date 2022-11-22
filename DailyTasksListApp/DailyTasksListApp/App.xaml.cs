@@ -7,7 +7,6 @@ using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: ExportFont("MaterialIcons-Regular.ttf", Alias = "Font")]
 namespace DailyTasksListApp
 {
     public partial class App : Application
@@ -30,9 +29,7 @@ namespace DailyTasksListApp
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new AuthorizationPage());
+            MainPage = new NavigationPage(new Main());
         }
 
         protected override void OnStart()

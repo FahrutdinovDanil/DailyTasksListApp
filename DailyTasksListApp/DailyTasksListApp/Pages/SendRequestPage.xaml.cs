@@ -32,15 +32,25 @@ namespace DailyTasksListApp.Pages
 
         private async void SendRequest(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    var checkReq = App.Database.GetRequests().Where(a => a.IdUser == idUser && a.IdNewUser == idNewUser);
+            //}
+            //catch
+            //{
+
+            //}
+            
             Request request = new Request()
             {
                 IdNewUser = idNewUser,
-                NameUser = User.Name,
                 NameNewUser = App.Database.GetUser(idNewUser).Name,
+                NameUser = User.Name,
                 IdUser = idUser,
                 Message = "Хочу в друзья"
 
             };
+
             App.Database.SaveRequest(request);
             await Navigation.PushAsync(new UsersTabbedPage(idUser));
         }

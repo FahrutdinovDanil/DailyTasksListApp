@@ -15,6 +15,7 @@ namespace DailyTasksListApp.Pages.TabPages
     {
         public User User { get; set; }
         public int idUser { get; set; }
+        public Request request { get; set; }
         public NotificationsPage(int IdUser)
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace DailyTasksListApp.Pages.TabPages
         }
         protected override void OnAppearing()
         {
-            messagesList.ItemsSource = App.Database.GetRequestUser(User.Id).Where(a => a.IdUser != idUser);
+            messagesList.ItemsSource = App.Database.GetRequests().Where(a => a.IdNewUser == idUser);
             base.OnAppearing();
         }
     }

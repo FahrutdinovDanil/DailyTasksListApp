@@ -52,7 +52,7 @@ namespace DailyTasksListApp
         }
         private void exit_Clicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new AuthorizationPage();
+            Application.Current.MainPage = new Main();
         }
     }
 }

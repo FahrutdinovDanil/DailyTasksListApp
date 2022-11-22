@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DailyTasksListApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AuthorizationPage : ContentPage
+    public partial class Main : ContentPage
     {
-        public AuthorizationPage()
+        public Main()
         {
             InitializeComponent();
         }

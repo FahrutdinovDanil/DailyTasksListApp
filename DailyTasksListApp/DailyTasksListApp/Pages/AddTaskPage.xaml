@@ -14,7 +14,10 @@
                         <Label Text="Описание"  TextColor="black"></Label>
                         <Entry x:Name="entDiscription"/>
                     </StackLayout>
-                    
+                    <StackLayout>
+                        <Label Text="Дата"  TextColor="black"></Label>
+                        <CheckBox ></CheckBox>
+                    </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                     <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>

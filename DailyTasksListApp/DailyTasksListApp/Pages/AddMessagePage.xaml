@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DailyTasksListApp.Pages.AddTaskPage">
+             x:Class="DailyTasksListApp.Pages.AddMessagePage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" >
@@ -17,7 +17,7 @@
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
                     <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
-                    <Button Text="Добавить" Clicked="SaveTask" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Добавить" Clicked="SaveMessage" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

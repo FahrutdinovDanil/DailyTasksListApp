@@ -20,7 +20,7 @@ namespace DailyTasksListApp.Pages
             idUser = id;
 
             Children.Add(new UsersPage(idUser));
-            Children.Add(new FriendsPage(/*idUser*/));
+            Children.Add(new FriendsPage(idUser));
             Children.Add(new NotificationsPage(idUser));
 
             this.BindingContext = this;

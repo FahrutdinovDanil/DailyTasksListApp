@@ -32,7 +32,7 @@ namespace DailyTasksListApp.Pages
 
         private async void SendRequest(object sender, EventArgs e)
         {
-            List<Request> checkReq = App.Database.GetRequests().Where(a => a.IdUser == idUser && a.IdNewUser == idNewUser && a.IsReceived == true).ToList();
+            List<Request> checkReq = App.Database.GetRequests().Where(a => a.IdUser == idUser && a.IdNewUser == idNewUser && ((a.IsReceived == true || a.IsNotReceived == true) || (a.IsReceived == false && a.IsNotReceived == false))).ToList();
 
             if (checkReq.Count == 0)
             {

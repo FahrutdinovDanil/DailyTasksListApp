@@ -4,13 +4,12 @@
              x:Class="DailyTasksListApp.Pages.TabPages.FriendsPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="messagesList" SeparatorColor="Black" ItemSelected="messagesList_ItemSelected" ItemsSource="{Binding}">
+            <ListView x:Name="friendsList" SeparatorColor="Black" ItemSelected="friendsList_ItemSelected" ItemsSource="{Binding}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout  Orientation="Horizontal">
-                                <Label Text="Вам пользователь"/>
-                                <Label Text="{Binding NameUser}"/>
+                                <Label Text="{Binding Name}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

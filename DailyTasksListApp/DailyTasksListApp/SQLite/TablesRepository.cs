@@ -15,6 +15,8 @@ namespace DailyTasksListApp.SQLite
             database.CreateTable<Task>();
             database.CreateTable<Request>();
             database.CreateTable<Product>();
+            database.CreateTable<Friend>();
+            database.CreateTable<Message>();
         }
         #region User
         public IEnumerable<User> GetUsers()
@@ -136,6 +138,66 @@ namespace DailyTasksListApp.SQLite
             return database.Delete<Product>(id);
         }
         public int SaveProduct(Product item)
+        {
+            if (item.Id != 0)
+            {
+                database.Update(item);
+                return item.Id;
+            }
+            else
+            {
+                return database.Insert(item);
+            }
+        }
+        #endregion
+        #region Friend
+        public IEnumerable<Friend> GetFriends()
+        {
+            return database.Table<Friend>().ToList();
+        }
+        public IEnumerable<Friend> GetFriendsId(int id)
+        {
+            return database.Table<Friend>().Where(a => a.IdUser == id);
+        }
+        public Friend GetFriend(int id)
+        {
+            return database.Get<Friend>(id);
+        }
+        public int DeleteFriend(int id)
+        {
+            return database.Delete<Friend>(id);
+        }
+        public int SaveFriend(Friend item)
+        {
+            if (item.Id != 0)
+            {
+                database.Update(item);
+                return item.Id;
+            }
+            else
+            {
+                return database.Insert(item);
+            }
+        }
+        #endregion
+        #region Message
+        public IEnumerable<Message> GetMessages()
+        {
+            return database.Table<Message>().ToList();
+        }
+        public IEnumerable<Message> GetMessagesId(int id)
+        {
+            return database.Table<Message>().Where(a => a.IdUser == id);
+        }
+        public Message GetMessage(int id)
+        {
+            return database.Get<Message>(id);
+        }
+        public int DeleteMessage(int id)
+        {
+            return database.Delete<Message>(id);
+        }
+        public int SaveMessage(Message item)
         {
             if (item.Id != 0)
             {

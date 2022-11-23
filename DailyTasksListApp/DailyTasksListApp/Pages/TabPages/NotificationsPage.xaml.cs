@@ -37,9 +37,16 @@ namespace DailyTasksListApp.Pages.TabPages
                 if (!String.IsNullOrEmpty(selectedRequest.Message))
                 {
                     selectedRequest.IsReceived = true;
+
                     App.Database.SaveRequest(selectedRequest);
                 }
                 await this.Navigation.PopAsync();
+                Friend freinds = new Friend()
+                {
+                    IdUser = selectedRequest.IdUser,
+                    IdNewUser = selectedRequest.IdNewUser
+                };
+                App.Database.SaveFriend(freinds);
             }
             else
             {

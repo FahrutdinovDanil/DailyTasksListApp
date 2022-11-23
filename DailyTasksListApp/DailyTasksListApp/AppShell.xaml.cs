@@ -21,7 +21,7 @@ namespace DailyTasksListApp
 
         private async void appointed_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AppointedTasksPage(/*Iuser.Id*/));
+            await Navigation.PushAsync(new AppointedTasksPage(Iuser.Id));
             Current.FlyoutIsPresented = false;
         }
         private async void important_Clicked(object sender, EventArgs e)

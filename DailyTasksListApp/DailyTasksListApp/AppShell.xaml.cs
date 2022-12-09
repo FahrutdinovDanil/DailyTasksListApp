@@ -1,4 +1,5 @@
 ﻿using DailyTasksListApp.Pages;
+using DailyTasksListApp.Pages.AppointedPages;
 using DailyTasksListApp.Pages.TabPages;
 using DailyTasksListApp.SQLite;
 using DailyTasksListApp.ViewModels;
@@ -21,17 +22,17 @@ namespace DailyTasksListApp
 
         private async void appointed_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AppointedTasksPage(Iuser.Id));
+            await Navigation.PushAsync(new AppointedTabbedPage(Iuser.Id));
             Current.FlyoutIsPresented = false;
         }
         private async void important_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ImportantTasksPage(/*Iuser.Id*/));
+            await Navigation.PushAsync(new ImportantTasksPage(Iuser.Id));
             Current.FlyoutIsPresented = false;
         }
         private void planned_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PlannedTasksPage(/*Iuser*/));
+            Navigation.PushAsync(new PlannedTasksPage(Iuser.Id));
             Current.FlyoutIsPresented = false;
         }
         private void tasks_Clicked(object sender, EventArgs e)

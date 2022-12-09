@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DailyTasksListApp.ProductsPage">
+             x:Class="DailyTasksListApp.ProductsPage" Title="Продукты" Visual="Material">
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="AddProduct">
             <ToolbarItem.IconImageSource>
@@ -11,16 +11,19 @@
     </ContentPage.ToolbarItems>
     <ScrollView>
         <StackLayout>
-            <ListView x:Name="productsList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="productsList_ItemSelected">
+            <ListView x:Name="productsList" SeparatorColor="Black" ItemsSource="{Binding}" ItemSelected="productsList_ItemSelected" Margin="10" RowHeight="80">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout  Orientation="Horizontal">
-                                    <StackLayout Orientation="Vertical" Spacing="-5">
+                                    <StackLayout Orientation="Vertical">
                                         <StackLayout Orientation="Horizontal">
-                                            <Label Text="Name:"/>
-                                            <Label Text="{Binding Name}"/>
+                                            <Label Text="{Binding Name}" FontSize="24" Padding="10, 10, 0, 0"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Count}" FontSize="18" Padding="10,0,0,0"/>
+                                            <Label Text="{Binding CountType}" FontSize="18" Padding="0,0,0,0"/>
                                         </StackLayout>
                                     </StackLayout>
 

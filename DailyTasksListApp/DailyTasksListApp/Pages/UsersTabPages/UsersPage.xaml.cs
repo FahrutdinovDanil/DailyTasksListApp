@@ -37,5 +37,20 @@ namespace DailyTasksListApp.Pages.TabPages
         {
             InitializeComponent();
         }
+
+        public void Filter()
+        {
+            var filterUser = App.Database.GetUsers().Where(a => a.Id != idUser);
+            if (entSearch.Text != "")
+            {
+                filterUser = App.Database.GetUsers().Where(z => (z.Id != idUser && (z.Name.Contains(entSearch.Text) || z.Surname.Contains(entSearch.Text))));
+            }
+            usersList.ItemsSource = filterUser;
+        }
+
+        private void entSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Filter();
+        }
     }
 }

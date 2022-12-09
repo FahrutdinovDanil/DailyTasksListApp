@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DailyTasksListApp.Pages.AuthorizationPage">
+             x:Class="DailyTasksListApp.Pages.AuthorizationPage" Visual="Material" NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" Spacing="50" Padding="30">
             <StackLayout VerticalOptions="CenterAndExpand" 
@@ -13,7 +13,7 @@
             <StackLayout Spacing="30" >
                 <StackLayout>
                     <Label Text="Логин" FontSize="Large"></Label>
-                    <Entry x:Name="loginEntry" Placeholder="Email"/>
+                    <Entry x:Name="loginEntry"/>
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Пароль" FontSize="Large"></Label>
@@ -21,7 +21,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" >
-                <Button Text="Авторизоваться" HorizontalOptions="FillAndExpand" Clicked="Authorization_Clicked"></Button>
+                <Button Text="Войти" HorizontalOptions="FillAndExpand" Clicked="Authorization_Clicked"></Button>
                 <Button Text="Зарегистрироваться" HorizontalOptions="FillAndExpand" Clicked="Register_Clicked"></Button>
             </StackLayout>
         </StackLayout>

@@ -26,7 +26,7 @@ namespace DailyTasksListApp.Pages
             {
                 Name = entName.Text,
                 Count = Convert.ToInt32(entCount.Text),
-                CountType = pickerUnit.SelectedIndex.ToString(),
+                CountType = pickerUnit.SelectedItem.ToString(),
                 Discription = entDicription.Text,
                 IdUser = idUser
             };

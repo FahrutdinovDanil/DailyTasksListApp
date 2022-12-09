@@ -1,18 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DailyTasksListApp.Pages.SendRequestPage">
+             x:Class="DailyTasksListApp.Pages.SendRequestPage" Title="Пользователь" Visual="Material">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="20" >
-                <StackLayout >
-                    <StackLayout>
-                        <Label Text="Название"  TextColor="black"></Label>
-                        <Entry Text="{Binding Name}" x:Name="entName" />
+                <StackLayout>
+                    <Image Source="{Binding PhotoPath}" HorizontalOptions="Start"></Image>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Имя:" TextColor="black"></Label>
+                        <Label Text="{Binding Name}" x:Name="entName" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Фамилия:"  TextColor="black"></Label>
+                        <Label Text="{Binding Surname}" x:Name="entDiscription"/>
                     </StackLayout>
                     <StackLayout>
-                        <Label Text="Описание"  TextColor="black"></Label>
-                        <Entry Text="{Binding Surname}" x:Name="entDiscription"/>
+                        <Entry Placeholder="Сообщение" Text="{Binding Message}" x:Name="entMessage"/>
                     </StackLayout>
 
                 </StackLayout>

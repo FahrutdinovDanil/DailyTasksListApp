@@ -32,7 +32,7 @@ namespace DailyTasksListApp.Pages
 
         private async void SendRequest(object sender, EventArgs e)
         {
-            List<Request> checkReq = App.Database.GetRequests().Where(a => a.IdUser == idUser && a.IdNewUser == idNewUser && ((a.IsReceived == true || a.IsNotReceived == true) || (a.IsReceived == false && a.IsNotReceived == false))).ToList();
+            List<Request> checkReq = App.Database.GetRequests().Where(a => (a.IdUser == idUser || a.IdNewUser == idUser) && (a.IdNewUser == idNewUser || a.IdUser == idNewUser) && ((a.IsReceived == true || a.IsNotReceived == true) || (a.IsReceived == false && a.IsNotReceived == false))).ToList();
 
             if (checkReq.Count == 0)
             {
@@ -42,14 +42,14 @@ namespace DailyTasksListApp.Pages
                     NameNewUser = App.Database.GetUser(idNewUser).Name,
                     NameUser = User.Name,
                     IdUser = idUser,
-                    Message = "Хочу в друзья"
+                    Message = entMessage.Text
                 };
                 App.Database.SaveRequest(request);
                 await Navigation.PushAsync(new UsersTabbedPage(idUser));
             }
             else
             {
-                await DisplayAlert(" ", $"У вас уже есть заявка", "Выйти");
+                await DisplayAlert(" ", $"У вас уже есть заявка или пользователь находиться в списке ваших друзьях, проверьте!", "ОК");
             }
             
 

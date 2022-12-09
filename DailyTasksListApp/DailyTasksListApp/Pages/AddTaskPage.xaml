@@ -1,18 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DailyTasksListApp.Pages.AddTaskPage">
+             x:Class="DailyTasksListApp.Pages.AddTaskPage" Title="Добавление"  Visual="Material">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="20" >
-                <StackLayout >
+            <StackLayout Padding="10,20,10,10">
+                <StackLayout>
                     <StackLayout>
                         <Label Text="Название"  TextColor="black"></Label>
                         <Entry x:Name="entName" />
                     </StackLayout>
-                    <StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,10">
+                        <Label Text="Пометить важным"  TextColor="black"></Label>
+                        <CheckBox x:Name="cbIsImportant" Margin="20,-7,0,0" IsChecked="{Binding IsImportant}" ScaleX="1.5" ScaleY="1.5"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Добавить срок окончания" TextColor="black"/>
+                        <Switch x:Name="swDate" Margin="20,0,0,0" IsToggled="{Binding IsDate}" ScaleX="1.5" ScaleY="1.5" Toggled="swDate_Toggled"/>
+                    </StackLayout>
+                    <StackLayout x:Name="stDateTime">
+                        <DatePicker FontFamily="SourceCodePro-Medium" x:Name="date_dp"  BackgroundColor="#E8E8E8" TextColor="Black"/>
+                        <TimePicker  FontFamily="SourceCodePro-Medium" x:Name="time_tp"  BackgroundColor="#E8E8E8" TextColor="Black"/>
+                    </StackLayout>
+                    <StackLayout HeightRequest="300">
                         <Label Text="Описание"  TextColor="black"></Label>
-                        <Entry x:Name="entDiscription"/>
+                        <Editor x:Name="entDiscription" HeightRequest="200"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">

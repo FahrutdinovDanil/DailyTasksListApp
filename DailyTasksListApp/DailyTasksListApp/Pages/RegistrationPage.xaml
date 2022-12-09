@@ -3,30 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DailyTasksListApp.Pages.RegistrationPage" Visual="Material">
     <NavigationPage.TitleView>
-        <Label Text="Registration" FontSize="Large" Margin="50,0"></Label>
+        <Label Text="Регистрация" FontSize="Large" Margin="50,0"></Label>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Padding="30" Spacing="40">
             <StackLayout  Spacing="10">
                 <StackLayout>
-                    <Label Text="Name" FontSize="Large"></Label>
-                    <Entry x:Name="nameEntry"/>
+                    <Label Text="Загрузите фото" TextColor="black"></Label>
+                    <Image x:Name="userPhoto" Source="{Binding PhotoPath}" HeightRequest="200" Aspect="Fill"></Image>
+                    <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                        <Button Clicked="GetPhotoAsync" Text="Галерея" HorizontalOptions="FillAndExpand"/>
+                        <Button Clicked="TakePhotoAsync" Text="Камера" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Surname" FontSize="Large"></Label>
-                    <Entry x:Name="surnameEntry" Keyboard="Text"/>
+                    <Entry Placeholder="Имя" x:Name="nameEntry"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Email" FontSize="Large"></Label>
-                    <Entry x:Name="emailEntry" Keyboard="Email"/>
+                    <Entry x:Name="surnameEntry" Placeholder="Фамилия" Keyboard="Text"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Password" FontSize="Large"></Label>
-                    <Entry x:Name="passwordEntry" IsPassword ="True"/>
+                    <Entry x:Name="emailEntry" Placeholder="Логин" Keyboard="Email"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Confirm password" FontSize="Large"></Label>
-                    <Entry x:Name="password2Entry" IsPassword ="True"/>
+                    <Entry x:Name="passwordEntry" Placeholder="Пароль" IsPassword ="True"/>
+                </StackLayout>
+                <StackLayout>
+                    <Entry x:Name="password2Entry" Placeholder="Повторите пароль" IsPassword ="True"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout VerticalOptions="EndAndExpand">

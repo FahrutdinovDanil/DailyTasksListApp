@@ -137,6 +137,7 @@ namespace DailyTasksListApp.SQLite
         {
             return database.Delete<Product>(id);
         }
+
         public int SaveProduct(Product item)
         {
             if (item.Id != 0)

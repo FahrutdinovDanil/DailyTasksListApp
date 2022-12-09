@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DailyTasksListApp.Pages.EditTaskPage" Title="Редактирование" Visual="Material">
+             x:Class="DailyTasksListApp.Pages.EditAppointedTaskPage" Visual="Material">
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="RemoveTask">
             <ToolbarItem.IconImageSource>
@@ -17,15 +17,11 @@
                         <Label Text="Название"  TextColor="black"></Label>
                         <Entry Text="{Binding Name}" x:Name="entName" />
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Margin="0,10,0,10">
-                        <Label Text="Пометить важным"  TextColor="black"></Label>
-                        <CheckBox x:Name="cbIsImportant" Margin="20,-7,0,0" IsChecked="{Binding IsImportant}" ScaleX="1.5" ScaleY="1.5"/>
-                    </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Добавить срок окончания" TextColor="black"/>
+                        <Label x:Name="lbAddDate" Text="Добавить срок окончания" TextColor="black"/>
                         <Switch x:Name="swDate" Margin="20,0,0,0" IsToggled="{Binding IsDate}" ScaleX="1.5" ScaleY="1.5" Toggled="swDate_Toggled"/>
                     </StackLayout>
-                    <StackLayout x:Name="stDateTime">
+                    <StackLayout x:Name="stDateTime" Orientation="Horizontal">
                         <DatePicker FontFamily="SourceCodePro-Medium" x:Name="date_dp" Date="{Binding DateTime}"  BackgroundColor="#E8E8E8" TextColor="Black"/>
                         <TimePicker  FontFamily="SourceCodePro-Medium" x:Name="time_tp"  BackgroundColor="#E8E8E8" TextColor="Black"/>
                     </StackLayout>
@@ -35,9 +31,9 @@
                     </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
-                    <Button Text="Отмена" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
-                    <Button Text="Сделано" Clicked="EditTask" HorizontalOptions="FillAndExpand"/>
-                    <Button Text="Изменить" Clicked="SaveTask" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="Назад" Clicked="Cancel" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="btnDone" Text="Сделано" Clicked="EditTask" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="btnEdit" Text="Изменить" Clicked="SaveTask" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

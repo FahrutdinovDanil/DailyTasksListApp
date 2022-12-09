@@ -22,7 +22,7 @@ namespace DailyTasksListApp
         }
         protected override void OnAppearing()
         {
-            tasksList.ItemsSource = App.Database.GetTasksId(idUser);
+            tasksList.ItemsSource = App.Database.GetTasksId(idUser).Where(a => a.IsImportant == false && a.IsDate == false);
             base.OnAppearing();
         }
 

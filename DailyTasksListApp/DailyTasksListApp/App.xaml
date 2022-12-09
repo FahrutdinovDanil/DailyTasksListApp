@@ -5,17 +5,18 @@
     <Application.Resources>
         <Style TargetType="Button">
             <Setter Property="CornerRadius" Value="50"/>
-            <Setter Property="BackgroundColor" Value="#B4A390"/>
+            <Setter Property="BackgroundColor" Value="#E5E5E5"/>
             <Setter Property="TextColor" Value="Black"/>
         </Style>
-        <!--<Style TargetType="Entry">
+        <Style TargetType="Entry">
             <Setter Property="BackgroundColor" Value="#E5E5E5" />
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="HorizontalTextAlignment" Value="Start" />
-        </Style>-->
+        </Style>
         <Style TargetType="NavigationPage">
             <Setter Property="BackgroundColor" Value="#B4A390"/>
             <Setter Property="BarBackgroundColor" Value="#B4A390"/>
+            <Setter Property="BarBackground" Value="#B4A390"/>
         </Style>
         <Style TargetType="Label">
             <Setter Property="FontSize" Value="Medium"></Setter>
@@ -24,6 +25,11 @@
         </Style>
         <Style TargetType="Shell">
             <Setter Property="BackgroundColor" Value="#B4A390"></Setter>
+            <Setter Property="NavigationPage.BarBackground" Value="#B4A390"/>
+        </Style>
+        <Style TargetType="TabbedPage"                
+           ApplyToDerivedTypes="True">
+            <Setter Property="BarBackgroundColor" Value="#B4A390"/>
         </Style>
     </Application.Resources>
 </Application>

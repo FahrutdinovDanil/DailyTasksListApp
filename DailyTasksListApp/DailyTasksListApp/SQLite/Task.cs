@@ -14,6 +14,11 @@ namespace DailyTasksListApp.SQLite
         public string Discription { get; set; }
         public DateTime DateTime { get; set; }
         public bool IsImportant { get; set; }
+        public bool IsDate { get; set; }
+        public string RemainedDateTime { get; set; }
+        public bool IsDone { get; set; }
+        public string IsDoneImage { get; set; }
+
 
         public int IdUser { get; set; }
     }

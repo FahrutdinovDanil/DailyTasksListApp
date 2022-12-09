@@ -32,14 +32,10 @@ namespace DailyTasksListApp.Pages.TabPages
         private async void messagesList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Request selectedRequest = (Request)e.SelectedItem;
-            if (await DisplayAlert("Уведомление", $"Пользователь {selectedRequest.NameNewUser} хочет добавить вас в друзья. Он оставил вам сообщение: '{selectedRequest.Message}'. Вы хотите принять запрос от {selectedRequest.NameNewUser}?", "Принять", "Отклонить"))
+            if (await DisplayAlert("Уведомление", $"Пользователь {selectedRequest.NameUser} {selectedRequest.NameUser} хочет добавить вас в друзья. Он оставил вам сообщение: '{selectedRequest.Message}'. Вы хотите принять запрос от {selectedRequest.NameUser}?", "Принять", "Отклонить"))
             {
-                if (!String.IsNullOrEmpty(selectedRequest.Message))
-                {
-                    selectedRequest.IsReceived = true;
-
-                    App.Database.SaveRequest(selectedRequest);
-                }
+                selectedRequest.IsReceived = true;
+                App.Database.SaveRequest(selectedRequest);
                 await this.Navigation.PopAsync();
                 Friend freinds = new Friend()
                 {
@@ -50,11 +46,8 @@ namespace DailyTasksListApp.Pages.TabPages
             }
             else
             {
-                if (!String.IsNullOrEmpty(selectedRequest.Message))
-                {
-                    selectedRequest.IsNotReceived = true;
-                    App.Database.SaveRequest(selectedRequest);
-                }
+                selectedRequest.IsNotReceived = true;
+                App.Database.SaveRequest(selectedRequest);
                 await this.Navigation.PopAsync();
             }
         }

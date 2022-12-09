@@ -1,12 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DailyTasksListApp.InfoPage">
+             x:Class="DailyTasksListApp.InfoPage" Visual="Material">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout VerticalOptions="Center" >
+                <StackLayout>
+                    <Frame VerticalOptions="Center"
+                            IsClippedToBounds="True" HeightRequest="100" WidthRequest="100">
+                        <Label Text="Потом опять все в последний день придется сдавать, подзабыл?" FontSize="24"  HorizontalTextAlignment="Center"  Background="White"></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Padding="30">
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
+                        <Image Source="plan.png" HeightRequest="90" WidthRequest="90"/>
+                        <StackLayout Orientation="Vertical">
+                            <Frame VerticalOptions="Center"
+                                CornerRadius="20" IsClippedToBounds="True" HeightRequest="70" WidthRequest="70">
+                                <Label Text="Планирую свои работу, разбивая ее на подзадачи. Так она не будет казаться тебе сложной." FontSize="16"  HorizontalTextAlignment="Center"  Background="White"/>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
+                        <Image Source="work.png" HeightRequest="90" WidthRequest="90"/>
+                        <StackLayout Orientation="Vertical">
+                            <Frame VerticalOptions="Center"
+                                CornerRadius="20" IsClippedToBounds="True" HeightRequest="70" WidthRequest="70">
+                                <Label Text="Старайся делать свою работу в срок. Если ты каждый день будешь делать по немногу, то это у тебя войдет в привычку." FontSize="16"  HorizontalTextAlignment="Center"  Background="White"/>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

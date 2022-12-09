@@ -11,6 +11,7 @@ namespace DailyTasksListApp.SQLite
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
         public string Password { get; set; }
+        public string PhotoPath { get; set; }
         [Unique]
         public string Email { get; set; }
         public string Name { get; set; }
